@@ -3,7 +3,7 @@ layout: post
 title:  "Why Stashboard and Pingdom Weren't Enough: The Evolution of a Status Page"
 date:   2017-04-26 10:22:04
 author: Marshall Ricky
-categories: update
+categories: everpay update
 tags: 
 - payments_space
 - everpay
