@@ -30,7 +30,7 @@ layout: default
                     
                     <div class="post__author">
                 <a href="#"><div class="author-image--small inline" style="background-image: url('{{ page.author_image }}')"></div></a> 
-                        Authored by <span class="post__author-name"><a href="#" class="link__basic--dotted--white">{% if page.author %} • {{ page.author }}{% endif %}</a></span>
+                        Authored by <span class="post__author-name"><a href="#" class="link__basic--dotted--white">{% if page.author %} {{ page.author }}{% endif %}</a></span>
               </div>
                     <p class="text-center post-meta">{% if page.meta %} • {{ page.meta }}{% endif %}</p>
                </div>
@@ -54,7 +54,7 @@ layout: default
               <div class="col-lg-9 col-md-9 col-sm-10 p-top-md-110 p-bottom-md-20">
                 <div class="p-top-md-110">
                   <h1 class="text-center post-title">{{ page.title }}</h1>
-                <p class="text-center post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>           
+                <p class="text-center post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %}{{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>           
                     </div>
               </div>
 
@@ -72,7 +72,7 @@ layout: default
         <div class="row tp--col-sm-vertical-align">
           <div class="col-md-12 text-center text-md-left post-header p-top-sm-60">
     <h1 class="text-center post-title">{{ page.title }}</h1>
-            <p class="text-center post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+            <p class="text-center post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %}{{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
    </div>
           </div>
         </div>
@@ -91,18 +91,18 @@ layout: default
  <div class="author-image--medium" style="background-image: url('{{ page.author_image }}')"></div></a>
           </div>
           <div class="author author-bio-wrap--small margin-top padding-left--medium">
-            <a href="{{ post.url | prepend: site.baseurl }}/author/{{ page.author }}/" class="author__name--small">{% if page.author %} • {{ page.author }}{% endif %}</a>
+            <a href="{{ post.url | prepend: site.baseurl }}/author/{{ page.author }}/" class="author__name--small">{% if page.author %}{{ page.author }}{% endif %}</a>
             <span class="author-bio--small block margin-bottom--small">post.</span>
-            <a href="{{ post.url | prepend: site.baseurl }}/author/{{ page.author }}" class="link__basic--grey e-small-1">More posts by this author &gt;&gt;</a>
+            <a href="{{ post.url | prepend: site.baseurl }}/author/{{ page.author }}" class="link__basic--grey e-small-1">More posts by this author &gt;</a>
           </div>
         </div>
       </section>
       <section class="col-lg-5 col-md-12">
         <div class="post-tags js-post__tags">
           <p>Tagged with</p>
-	    {% if site.tags.size > 0 %}
-    {% for tag in site.tags %}
-    <a href="/tag/{{ tag[0] }}">{{ tag[0] }}</a> ({{ tag[1].size }})
+	    {% if page.tags.size > 0 %}
+    {% for tag in page.tags %}
+    <a href="/tag/{{ tag[0] }}">{{ tag[0] }}_</a>
     {% endfor %}
            {% endif %}
         </div>
@@ -115,7 +115,7 @@ layout: default
     <div class="grid">
       <div class="row center-lg">
         <div class="col-lg-10 col-md-12">
-          <button class="link__button--outline--dark show-comments" style="display: none;"><span class="load-comments__text">Load Comments</span></button>
+          <button class="link__button--outline--dark show-comments"><span class="load-comments__text">Load Comments</span></button>
           <div id="disqus_thread"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://disqus.com/embed/comments/?base=default&amp;f=strongly-typed&amp;t_u=https%3A%2F%2Fwww.braintreepayments.com%2Fblog%2Fwhy-payments-are-more-than-plumbing%2F&amp;t_d=Why%20Payments%20Are%20More%20Than%20Plumbing&amp;t_t=Why%20Payments%20Are%20More%20Than%20Plumbing&amp;s_o=default#version=5877d19a2375d89d688e97a988aa8ccf" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 321px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
           <section class="post__related-posts margin-top--large">
             <h3 class="post__related-posts__title e-600">You Might Also Like_</h3>
