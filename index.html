@@ -18,7 +18,9 @@ layout: default
           <div class="search search--active">
             <div class="search__input">
               <img class="search__icon" src="//cdn.everpayinc.com/assets/images/search-icon.svg">
-              <div class="ais-search-box"><input type="text" placeholder="Search keyword, title, etc..." id="search-input" autocapitalize="off" autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" value="" class="ais-search-box--input"></div>
+              <div class="ais-search-box">
+<input type="text" placeholder="Search keyword, title, etc..." id="search-input" autocapitalize="off" autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" value="" class="ais-search-box--input">
+              </div>
               <div class="search__dropdown" id="hits-container"></div>
               <span class="search__close">×</span>
             </div>
@@ -30,17 +32,19 @@ layout: default
   
   <div class="row">
     <div class="col-lg-12">
+              {% for post in site.posts %}
         <section class="featured-post">
           <a href="{{ post.url }}">
             <div class="featured-post__image" style="background-image: url({% if post.cover_image %}{{ post.cover_image }}{% else %}{{site.generic_cover_image}}{% endif %};"></div>
          <h3 class="featured-post__heading e-uppercase e-600 e-small-1">Featured</h3>
             <div class="featured-post__info">
-              <time datetime="2017-05-02" class="featured-post__date" title="{{ page.date | date: "%b %-d, %Y" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+              <time datetime="2017-05-02" class="featured-post__date" title="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
               <h1 class="featured-post__title"><span class="featured-post__title-text">  {{ post.title }}</span></h1>
                   <a href="{{ post.url }}" class="featured-post__button">Read &gt;&gt;</a>
             </div>
           </a>
         </section>
+              {% endfor %}
     </div>
   </div>
   
