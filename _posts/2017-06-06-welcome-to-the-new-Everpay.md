@@ -6,7 +6,7 @@ author_image: /img/authors/kyungmin_kim.png
 author_bio: (aka KK) joined Balanced as a front-end engineer in January 2014 after attending App Academy. She launched her career at Google as a UX designer. 
 image: /img/blogimages/2014-01-30.jpg
 cover_image: /img/blogimages/2014-01-30-cover.jpg
-categories: update
+categories: everpay update
 tags: 
 - payments_space
 - everpay
