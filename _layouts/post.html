@@ -100,8 +100,8 @@ layout: default
       <section class="col-lg-5 col-md-12">
         <div class="post-tags js-post__tags">
           <p>Tagged with</p>
-	    {% if page.tags.size > 0 %}
-    {% for tag in page.tags %}
+	    {% if post.tags.size > 0 %}
+    {% for tag in post.tags %}
     <a href="/tag/{{ tag[0] }}">{{ tag[0] }}_</a>
     {% endfor %}
            {% endif %}
@@ -110,13 +110,14 @@ layout: default
     </div>
 		  <div class="divider--dotted margin-top--large"></div>
 		  
-		  <div class="background__grey--light padding-y--large">
+<div class="background__grey--light padding-y--large">
   <div class="grid-container">
     <div class="grid">
       <div class="row center-lg">
         <div class="col-lg-10 col-md-12">
           <button class="link__button--outline--dark show-comments"><span class="load-comments__text">Load Comments</span></button>
-          <div id="disqus_thread"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://disqus.com/embed/comments/?base=default&amp;f=strongly-typed&amp;t_u=https%3A%2F%2Fwww.braintreepayments.com%2Fblog%2Fwhy-payments-are-more-than-plumbing%2F&amp;t_d=Why%20Payments%20Are%20More%20Than%20Plumbing&amp;t_t=Why%20Payments%20Are%20More%20Than%20Plumbing&amp;s_o=default#version=5877d19a2375d89d688e97a988aa8ccf" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 321px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+          <div id="disqus_thread" style="display:none;">
+		  <iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://disqus.com/embed/comments/?base=default&amp;f=strongly-typed&amp;t_u=https%3A%2F%2Fwww.braintreepayments.com%2Fblog%2Fwhy-payments-are-more-than-plumbing%2F&amp;t_d=Why%20Payments%20Are%20More%20Than%20Plumbing&amp;t_t=Why%20Payments%20Are%20More%20Than%20Plumbing&amp;s_o=default#version=5877d19a2375d89d688e97a988aa8ccf" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 321px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
           <section class="post__related-posts margin-top--large">
             <h3 class="post__related-posts__title e-600">You Might Also Like_</h3>
             <ul class="js-post__related-posts"></ul>
