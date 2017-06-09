@@ -102,7 +102,7 @@ layout: default
           <p>Tagged with</p>
 	    {% if site.tags.size > 0 %}
     {% for tag in site.tags %}
-    <a href="/tag/{{ tag[0] }}">{{ tag[0] }}_</a>
+    <a href="{{ post.url | prepend: site.baseurl }}/tag/{{ tag[0] }}">{{ tag[0] }}_</a>
     {% endfor %}
            {% endif %}
         </div>
