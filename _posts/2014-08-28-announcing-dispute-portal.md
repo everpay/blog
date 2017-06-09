@@ -6,7 +6,7 @@ cover_image: /img/blogimages/8_28_2014_image_1020x340.jpg
 date:   2014-08-28 10:22:04
 author: Andrew Nossiter
 author_image: /img/authors/andrew_nossiter.png
-categories: update
+categories: everpay update
 tags: 
 - payments_space
 - everpay
@@ -15,7 +15,7 @@ tags:
 - payments
 ---
 
-Handling credit card disputes can be a messy affair, but at Balanced we are making this process as painless as possible for our customers. Starting today, you’ll be able to fight chargebacks directly via the dashboard without having to contact support thanks to our new dispute portal!
+Handling credit card disputes can be a messy affair, but at Everpay we are making this process as painless as possible for our customers. Starting today, you’ll be able to fight chargebacks directly via the dashboard without having to contact support thanks to our new dispute portal!
 
 ![Dispute portal](/img/blogimages/dispute-details-page.png)
 
