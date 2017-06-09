@@ -35,7 +35,7 @@ layout: default
             <div class="featured-post__image" style="background-image: url({% if post.cover_image %}{{ post.cover_image }}{% else %}{{site.generic_cover_image}}{% endif %};"></div>
          <h3 class="featured-post__heading e-uppercase e-600 e-small-1">Featured</h3>
             <div class="featured-post__info">
-              <time datetime="2017-05-02" class="featured-post__date" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}_</time>
+              <time datetime="2017-05-02" class="featured-post__date" title="{{ page.date | date: "%b %-d, %Y" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
               <h1 class="featured-post__title"><span class="featured-post__title-text">  {{ post.title }}</span></h1>
                   <span class="featured-post__button"><a href="{{ post.url }}">Read &gt;&gt;</a></span>
             </div>
@@ -62,10 +62,7 @@ layout: default
         </div>
         <article class="post-list__article tag-red">
           <div class="post-list__date e-small">posted on <small class="timestyle">
-  <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
-    <span class="timestyle-day">{{ post.date | date: "%d" }}</span>
-    <span class="timestyle-month">{{ post.date | date: "%b" }}</span>
-  </time>
+  <time datetime="{{ page.date | date: "%b %-d, %Y" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
 </small>
 </div>
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
