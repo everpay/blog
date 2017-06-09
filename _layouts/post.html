@@ -28,7 +28,7 @@ layout: default
                     <div class="divider--squiggle margin-centered"></div>
                     
                     <div class="post__author">
-                <a href="#"><div class="author-image--small inline" style="background-image: url('./images/2015/12/502a4f0c0aa8a0a9545ba512cc288a3e_400x400.jpeg')"></div></a> 
+                <a href="#"><div class="author-image--small inline" style="background-image: url('https://www.braintreepayments.com/assets/images/2015/12/502a4f0c0aa8a0a9545ba512cc288a3e_400x400.jpeg')"></div></a> 
                         Authored by <span class="post__author-name"><a href="#" class="link__basic--dotted--white">{% if page.author %} • {{ page.author }}{% endif %}</a></span>
               </div>
                     <p class="text-center post-meta">{% if page.meta %} • {{ page.meta }}{% endif %}</p>
@@ -125,9 +125,8 @@ layout: default
            </div>
           </div>
         </div>
-  </section>
 
-     <nav class="clearfix" id="article-nav">
+     <nav class="clearfix text-center" id="article-nav">
       {% if page.previous.url %}
         <a id="article-nav-next" href="{{ site.url }}{{ page.previous.url }}">
             <strong>Previous</strong><!--
@@ -143,5 +142,6 @@ layout: default
             <strong>Back to Blog</strong>
         </a>
     </nav>
-    
+	
+      </section>
 </div>
