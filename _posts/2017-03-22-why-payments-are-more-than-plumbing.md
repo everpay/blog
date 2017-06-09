@@ -9,7 +9,7 @@ tags:
 - Everpay
 - Payments
 ---
-<h6>A <a href="http://www.itproportal.com/features/why-payments-are-more-than-plumbing/">version of this article</a> was first published on UK publication, <em>IT Pro Portal</em>, on April 10th, 2017. It is republished here with permission from <em>IT Pro Portal</em>.</h6>
+<pre><h6>A <a href="http://www.itproportal.com/features/why-payments-are-more-than-plumbing/">version of this article</a> was first published on UK publication, <em>IT Pro Portal</em>, on April 10th, 2017. It is republished here with permission from <em>IT Pro Portal</em>.</h6></pre>
 
 Transactions are the foundation of business, but too often in our line of work we see payments treated as an afterthought.
 <br>
