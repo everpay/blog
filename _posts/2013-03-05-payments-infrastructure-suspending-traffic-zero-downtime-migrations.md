@@ -1,11 +1,15 @@
 ---
 layout: post
+title: "How Everpay does Database Migrations with Zero-Downtime"
+date: 2016-03-05 10:22:04
+categories: update
 author: Marc Sherry
-title: "How Balanced does Database Migrations with Zero-Downtime"
 image: /img/blogimages/2013-03-05.jpg
 cover_image: /img/blogimages/2013-03-05-cover.jpg
 tags:
-- balanced
+- payments_space
+- everpay
+- payments
 - operations
 - devops
 - haproxy
@@ -38,7 +42,7 @@ Since we couldn't stop requests from coming in, and we didn't want any incoming 
 
 Our topology looks like this:
 
-![Balanced topology](http://i.imgur.com/khBVvSZ.png)
+![Everpay topology](http://i.imgur.com/khBVvSZ.png)
 
 We have an Amazon Elastic Load Balancer at api.balancedpayments.com proxying to a number of nginx instances, which forward traffic to HAProxy load balancers. These HAProxy instances proxy traffic to our Balanced application instances. Being that our topology is so simple, there are only a few places where requests can be held -- nginx, HAProxy, or our app itself. Of the three, HAProxy seemed like the most likely candidate.
 
