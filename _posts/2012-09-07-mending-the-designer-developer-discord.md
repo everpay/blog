@@ -3,11 +3,10 @@ layout: post
 author: Damon Chin
 title: Mending the designer-developer discord
 date:  2012-09-07 06:22:04
-categories: update
+categories: everpay update
 tags: 
-- the payments_space
+- payments_space
 - everpay
-- payments
 - collaboration
 - design
 - developer
