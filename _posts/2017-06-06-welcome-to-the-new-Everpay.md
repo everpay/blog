@@ -2,13 +2,18 @@
 layout: post
 title:  "Welcome to Everpay!"
 date:   2015-08-26 19:55:04
-author: Ricardo Vasquez
-categories: Everpay update
+author_image: /img/authors/kyungmin_kim.png
+author_bio: (aka KK) joined Balanced as a front-end engineer in January 2014 after attending App Academy. She launched her career at Google as a UX designer. 
+image: /img/blogimages/2014-01-30.jpg
+cover_image: /img/blogimages/2014-01-30-cover.jpg
+categories: update
 tags: 
-- The Payments_Space
-- Everpay
-- Payments
+- payments_space
+- everpay
+- payments
 ---
+
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
