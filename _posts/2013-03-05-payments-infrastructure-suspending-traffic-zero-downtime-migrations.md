@@ -2,7 +2,7 @@
 layout: post
 title: "How Everpay does Database Migrations with Zero-Downtime"
 date: 2016-03-05 10:22:04
-categories: update
+categories: everpay update
 author: Marc Sherry
 image: /img/blogimages/2013-03-05.jpg
 cover_image: /img/blogimages/2013-03-05-cover.jpg
