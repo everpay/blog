@@ -5,9 +5,9 @@ date:   2017-04-26 10:22:04
 author: Ricardo Vasquez
 categories: update
 tags: 
-- The Payments_Space
-- Everpay
-- Payments
+- payments_space
+- everpay
+- payments
 ---
 <pre><h6>A <a href="http://www.itproportal.com/features/why-payments-are-more-than-plumbing/">version of this article</a> was first published on UK publication, <em>IT Pro Portal</em>, on April 10th, 2017. It is republished here with permission from <em>IT Pro Portal</em>.</h6></pre>
 
