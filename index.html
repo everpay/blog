@@ -32,13 +32,12 @@ layout: default
     <div class="col-lg-12">
         <section class="featured-post">
           <a href="/blog/why-payments-are-more-than-plumbing/">
-            <div class="featured-post__image" style="background-image: url(https://www.braintreepayments.com//blog/content/images/2017/04/b-pipes.jpg);"></div>
-            <!--<img src="/blog/content/images/2017/04/b-pipes.jpg" class="featured-post__image">-->
-            <h3 class="featured-post__heading e-uppercase e-600 e-small-1">Featured</h3>
+            <div class="featured-post__image" style="background-image: url({% if post.cover_image %}{{ post.cover_image }}{% else %}{{site.generic_cover_image}}{% endif %};"></div>
+         <h3 class="featured-post__heading e-uppercase e-600 e-small-1">Featured</h3>
             <div class="featured-post__info">
               <time datetime="2017-05-02" class="featured-post__date" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}_</time>
-              <h1 class="featured-post__title"><span class="featured-post__title-text">Why Payments Are More Than Plumbing</span></h1>
-              <span class="featured-post__button">Read &gt;&gt;</span>
+              <h1 class="featured-post__title"><span class="featured-post__title-text">  {{ post.title }}</span></h1>
+                  <span class="featured-post__button"><a href="{{ post.url }}">Read &gt;&gt;</a></span>
             </div>
           </a>
         </section>
@@ -57,7 +56,7 @@ layout: default
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article">
       <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
         <div class="post-list__image-container">
-          <div class="post-list__image" style="background-image: url(https://www.braintreepayments.com/blog/content/images/2017/05/blog-dss.jpg);"></div>
+          <div class="post-list__image" style="background-image: url({% if post.image %}{{ post.image }}{% else %}{{site.generic_image}}{% endif %});"></div>
           <div class="post-list__link e-small e-600 e-uppercase"><span class="post-list__reading-time">
             <span class="js-post-list__reading-time">3 minute</span> read</span></div>
         </div>
