@@ -29,7 +29,7 @@ layout: default
                     <div class="divider--squiggle margin-centered"></div>
                     
                     <div class="post__author">
-                <a href="#"><div class="author-image--small inline" style="background-image: url('https://www.braintreepayments.com/assets/images/2015/12/502a4f0c0aa8a0a9545ba512cc288a3e_400x400.jpeg')"></div></a> 
+                <a href="#"><div class="author-image--small inline" style="background-image: url('{{ page.author_image }}')"></div></a> 
                         Authored by <span class="post__author-name"><a href="#" class="link__basic--dotted--white">{% if page.author %} • {{ page.author }}{% endif %}</a></span>
               </div>
                     <p class="text-center post-meta">{% if page.meta %} • {{ page.meta }}{% endif %}</p>
@@ -54,10 +54,8 @@ layout: default
               <div class="col-lg-9 col-md-9 col-sm-10 p-top-md-110 p-bottom-md-20">
                 <div class="p-top-md-110">
                   <h1 class="text-center post-title">{{ page.title }}</h1>
-                 <p class="text-center post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-              
-                   <a class="btn btn-lg btn-white btn-box-shadow tp--scroll" href="#featured1">Learn more</a>
-                  </div>
+                <p class="text-center post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>           
+                    </div>
               </div>
 
             </div>
@@ -89,23 +87,29 @@ layout: default
       <section class="col-lg-7 col-md-12">
         <div class="author-container">
           <div class="author">
-            <a href="/blog/author/david-nunn/"><div class="author-image--medium" style="background-image: url('https://www.braintreepayments.com/content/images/2015/12/502a4f0c0aa8a0a9545ba512cc288a3e_400x400.jpeg')"></div></a>
+            <a href="{{ post.url | prepend: site.baseurl }}/author/{{ page.author }}/">
+ <div class="author-image--medium" style="background-image: url('{{ page.author_image }}')"></div></a>
           </div>
           <div class="author author-bio-wrap--small margin-top padding-left--medium">
-            <a href="/blog/author/david-nunn/" class="author__name--small">David Nunn</a>
-            <span class="author-bio--small block margin-bottom--small">David is Head of Braintree Europe. Since 2013 he's built the team from scratch. He is passionate about company culture, payments optimisation, and finding solutions to power businesses’ growth.</span>
-            <a href="/blog/author/david-nunn/" class="link__basic--grey e-small-1">More posts by this author &gt;&gt;</a>
+            <a href="{{ post.url | prepend: site.baseurl }}/author/{{ page.author }}/" class="author__name--small">{% if page.author %} • {{ page.author }}{% endif %}</a>
+            <span class="author-bio--small block margin-bottom--small">post.</span>
+            <a href="{{ post.url | prepend: site.baseurl }}/author/{{ page.author }}" class="link__basic--grey e-small-1">More posts by this author &gt;&gt;</a>
           </div>
         </div>
       </section>
       <section class="col-lg-5 col-md-12">
         <div class="post-tags js-post__tags">
           <p>Tagged with</p>
-          <a href="/blog/tag/learn_/">Learn_</a> <a href="/blog/tag/the-payments-space_/">The Payments Space_</a> <a href="/blog/tag/industry-experts_/">Industry Experts_</a>
+	    {% if site.tags.size > 0 %}
+    {% for tag in site.tags %}
+    <a href="/tag/{{ tag[0] }}">{{ tag[0] }}</a> ({{ tag[1].size }})
+    {% endfor %}
+           {% endif %}
         </div>
       </section>
     </div>
 		  <div class="divider--dotted margin-top--large"></div>
+		  
 		  <div class="background__grey--light padding-y--large">
   <div class="grid-container">
     <div class="grid">
