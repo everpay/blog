@@ -71,13 +71,17 @@ layout: default
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
           <div class="post-list__excerpt e-small-1">{{ post.meta }}</div>
         </article>
-      </a>
+            
+           </a>
       <div class="post-list__tag e-uppercase e-small e-600 tag-red">
-      <a href="/tag/payments-space/">the payments space_</a>
+     {% for tag in site.tags %}
+   <a href="/tag#{{ tag[0] }}">{{ tag[0] }}</a> ({{ tag[1].size }})
+    {% endfor %}
        </div>
     </article>
   </div>
-       {% endfor %}
+       
+         {% endfor %}
     </div>
   
   
