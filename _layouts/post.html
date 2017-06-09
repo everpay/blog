@@ -89,7 +89,7 @@ layout: default
       <section class="col-lg-7 col-md-12">
         <div class="author-container">
           <div class="author">
-            <a href="/blog/author/david-nunn/"><div class="author-image--medium" style="background-image: url('https://www.braintreepayments.com/blog/content/images/2015/12/502a4f0c0aa8a0a9545ba512cc288a3e_400x400.jpeg')"></div></a>
+            <a href="/blog/author/david-nunn/"><div class="author-image--medium" style="background-image: url('https://www.braintreepayments.com/content/images/2015/12/502a4f0c0aa8a0a9545ba512cc288a3e_400x400.jpeg')"></div></a>
           </div>
           <div class="author author-bio-wrap--small margin-top padding-left--medium">
             <a href="/blog/author/david-nunn/" class="author__name--small">David Nunn</a>
@@ -128,6 +128,10 @@ layout: default
 
      <nav class="clearfix text-center" id="article-nav">
       {% if page.previous.url %}
+	         <div class="grid-container">
+    <div class="grid">
+      <div class="row center-lg text-center">
+        <div class="col-lg-10 col-md-11">
         <a id="article-nav-next" href="{{ site.url }}{{ page.previous.url }}">
             <strong>Previous</strong><!--
             --><span id="article-nav-next-name"><!--
@@ -136,11 +140,24 @@ layout: default
             </span>
 			<span class="article-ico" id="article-ico-next"></span>
         </a>
+		 </div>
+		</div>
+	      </div>
+	    </div>
       {% endif %}
+	    <div class="grid-container">
+    <div class="grid">
+      <div class="row center-lg text-center">
+        <div class="col-lg-4">
+          <button class="link__button--outline--dark btn-primary btn-lg">
         <a id="article-nav-blogs" href="{{ site.url }}">
             <span class="article-ico text-center" id="article-ico-blogs"></span>
             <strong>Back to Blog</strong>
-        </a>
+        </a></button>
+		  </div>
+		</div>
+	      </div>
+	    </div>
     </nav>
 	
       </section>
