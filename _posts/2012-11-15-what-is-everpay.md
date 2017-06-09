@@ -3,11 +3,11 @@ layout: post
 title:  "What is Everpay?"
 date:   2012-11-22 19:55:04
 author: Ricardo Vasquez
-categories: update
+categories: everpay update
 tags: 
-- The Payments_Space
-- Everpay
-- Payments
+- payments_space
+- everpay
+- payments
 ---
 
 <p class="entry-image" align="center">
