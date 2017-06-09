@@ -12,20 +12,20 @@ tags:
 <h6>A <a href="http://www.itproportal.com/features/why-payments-are-more-than-plumbing/">version of this article</a> was first published on UK publication, <em>IT Pro Portal</em>, on April 10th, 2017. It is republished here with permission from <em>IT Pro Portal</em>.</h6>
 
 Transactions are the foundation of business, but too often in our line of work we see payments treated as an afterthought.
-<br/>
+<br>
 As a consumer, we’ve all gone through an online checkout, only to find they don’t take our card or our preferred mobile wallet; spotted a product online and struggled to find a place we can buy it; had to leave an app, or, worse still, download one to buy something; or landed on a confusing checkout page that looks completely different to the rest of the website.
-<br/>
+<br>
 As a merchant, perhaps you’ve spent time refining your website to look beautiful, but the data needed for compliant billing can’t always be gathered in a way that fits the site. Maybe you’ve found that your audience loves to shop on social platforms, but had to entice them away to a different site to buy. Or you’ve needed to pay other merchants selling via your online marketplace, or other service providers contributing to your platform, but can’t manage the settlement and disbursement quickly enough.
-<br/>
+<br>
 In all of these, the transaction is tacked on at the end of the experience, like an awkward yell of, "Wait! You have to pay for that!" as customers depart the store.
-<br/>
-Clearly, the payment is more than just transacting or getting paid.
-<br/>
+<br>
+<p>Clearly, the payment is more than just transacting or getting paid.</p>
+<br>
 
 <h1>Improving conversion</h1>
-
+<br>
 About 69 percent of all online transactions are abandoned.1 Business Insider calculates that this costs retailers around $4 trillion a year.2 Imagine if that was a physical store. One hundred people walk in, fill their baskets, walk up to the checkout, and then 69 of them just leave.
-<br/>
+<br>
 Now, in all fairness, a large portion of cart abandonments are simply a natural consequence of how users browse ecommerce sites -- many users will be window shopping, comparing prices, saving items for later, exploring gift options, etc. This is largely unavoidable. However, a substantial portion of these could be converted into a sale through a better experience. Baynard Institute has suggested that around 35 percent are convertible -- just by improving the checkout and payment process.3
 <br/>
 These changes include things like a shorter and clearer checkout, surfacing the relevant payment options that people want to use, and stronger security. Research shows that around 42 percent of millennials currently limit their own mobile transactions because of security concerns.4
