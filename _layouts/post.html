@@ -100,9 +100,9 @@ layout: default
       <section class="col-lg-5 col-md-12">
         <div class="post-tags js-post__tags">
           <p>Tagged with</p>
-	    {% if post.tags.size > 0 %}
-    {% for tag in post.tags %}
-    <a href="/tag/{{ tag[0] }}">{{ tag[0] }}_</a>
+	    {% if site.tags.size > 0 %}
+    {% for tag in site.tags %}
+    <a href="/tag/{{ tag[1] }}">{{ tag[1] }}_</a>
     {% endfor %}
            {% endif %}
         </div>
