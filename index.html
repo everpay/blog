@@ -61,7 +61,13 @@ layout: default
             <span class="js-post-list__reading-time">3 minute</span> read</span></div>
         </div>
         <article class="post-list__article tag-red">
-          <div class="post-list__date e-small">posted on <time datetime="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time></div>
+          <div class="post-list__date e-small">posted on <small class="timestyle">
+  <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+    <span class="timestyle-day">{{ post.date | date: "%d" }}</span>
+    <span class="timestyle-month">{{ post.date | date: "%b" }}</span>
+  </time>
+</small>
+              </div>
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
           <div class="post-list__excerpt e-small-1">Serving your customers is about more than just offering great products and being responsive -- it's also about protectin…</div>
         </article>
