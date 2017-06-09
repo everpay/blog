@@ -2,15 +2,18 @@
 layout: post
 author: Steve Klabnik
 author_image: /img/authors/steve_klabnik.png
-title: Balanced's Architecture
+title: Everpay's Architecture
+date:   2014-03-07 2:22:33
 image: /img/blogimages/3_7_2014_image_600x424.jpg
 cover_image: /img/blogimages/3_7_2014_image_1020x340.jpg
 tags:
-- balanced
+- payments_space
+- everpay
 - platform
+- payments
 ---
 
-## Balanced's Architecture
+## Everpay's Architecture
 
 There has been a lot of discussion lately about the software architecture
 that runs financial systems. It's been in the news because of the massive
@@ -40,31 +43,31 @@ but this is a broader discussion of the rest of our architecture.
 
 Here's a diagram of how it all fits together:
 
-![Balanced Architecture](/img/blogimages/balanced_arch_1.jpg)
+![Everpay Architecture](/img/blogimages/balanced_arch_1.jpg)
 
 This is the simplest version of the diagram. I'm going to do a quick walkthrough and then circle back to dig more into the details.
 
-## One: You include balanced.js
+## One: You include everpay.js
 
-Your site, hosted by you, includes [`balanced.js`](https://github.com/balanced/balanced-js/) by linking to it with a `<script>` tag on your checkout page. It gets loaded up from [https://js.balancedpayments.com/balanced.js](https://js.balancedpayments.com/balanced.js) into your user's browser.
+Your site, hosted by you, includes [`everpay.js`](https://github.com/everpay/everpay-js/) by linking to it with a `<script>` tag on your checkout page. It gets loaded up from [https://js.goeverpay.com/everpay.js](https://js.goeverpay.com/everpay.js) into your user's browser.
 
-[Here](https://docs.balancedpayments.com/1.1/guides/balanced-js/) is more documentation on proper use of `balanced.js`.
+[Here](https://docs.everpayinc.com/1.1/guides/everpay-js/) is more documentation on proper use of `everpay.js`.
 
-## Two: balanced.js sends card info to PCI store
+## Two: everpay.js sends card info to PCI store
 
-When your user presses the submit button, `balanced.js` overrides the submit button, collects the card information from your `<form>`, and then sends it to our [PCI](https://www.pcisecuritystandards.org/) compliant data store.
+When your user presses the submit button, `everpay.js` overrides the submit button, collects the card information from your `<form>`, and then sends it to our [PCI](https://www.pcisecuritystandards.org/) compliant data store.
 
-The store basically creates a unique identifier (a ["token"](http://en.wikipedia.org/wiki/Tokenization_(data_security))) for that particular card information, and saves it. In essence, the data store is just one huge hash table: `{"/cards/123": "4444 4444 4444 4444"}`. The key gets sent back to `balanced.js`, and the value stays inside the store.
+The store basically creates a unique identifier (a ["token"](http://en.wikipedia.org/wiki/Tokenization_(data_security))) for that particular card information, and saves it. In essence, the data store is just one huge hash table: `{"/cards/123": "4444 4444 4444 4444"}`. The key gets sent back to `everpay.js`, and the value stays inside the store.
 
 `knox` is the internal name of our PCI store, after [Fort Knox](http://www.knox.army.mil/).
 
-## Three: balanced.js sends you the token
+## Three: everpay.js sends you the token
 
-`balanced.js` takes this token, and submits it in the form instead of the credit card information. This token (which in our case is a URL), gets sent to your server, where you save it. Since this data isn't card information (it's just a token that represents card information and it can't be used by anyone else) you're free to save it, and you should! 
+`everpay.js` takes this token, and submits it in the form instead of the credit card information. This token (which in our case is a URL), gets sent to your server, where you save it. Since this data isn't card information (it's just a token that represents card information and it can't be used by anyone else) you're free to save it, and you should! 
 
 ## Four: You use the token to request a charge
 
-Your application then makes a call to our API, sending along the token. "Hey Balanced, please charge card `/cards/123` $10."
+Your application then makes a call to our API, sending along the token. "Hey Everpay, please charge card `/cards/123` $10."
 
 This is probably the part of the diagram you think about the most, as it's the biggest way you interface with us.
 
@@ -86,7 +89,7 @@ So that's how it works at a basic level, but there's much more to it than that. 
 
 ![Balanced Architecture 2](/img/blogimages/balanced_arch_2.jpg)
 
-One of the nice things about our API is that you don't get a 'test sandbox': you just create a 'test marketplace,' but still hit `https://api.balancedpayments.com`. Test marketplaces are exactly like production marketplaces, except that for test marketplaces the PCI store knows not to propagate charges to the card networks and we don't charge you for these test transactions.
+One of the nice things about our API is that you don't get a 'test sandbox': you just create a 'test marketplace,' but still hit `https://api.everpayinc.com`. Test marketplaces are exactly like production marketplaces, except that for test marketplaces the PCI store knows not to propagate charges to the card networks and we don't charge you for these test transactions.
 
 We love testing. We encourage our users to write lots of tests. So it'd be pretty bad if test and production were on the same machines: a really enthusiastic tester could degrade production service.
 
@@ -94,21 +97,21 @@ So we actually have a router component that checks to see if it's a test marketp
 
 ## Splitting up the API, and introducing `midlr`
 
-![Balanced Architecture 3](/img/blogimages/balanced_arch_3.jpg)
+![Everpay Architecture 3](/img/blogimages/balanced_arch_3.jpg)
 
 "The API" isn't just one application, though: it's two! The API actually talks to a component called `precog`, which does our own fraud detection. So in reality, the conversation is "Hey `precog`, please charge card `/cards/123` $10", and if  `precog` says it's okay, it goes to our PCI store and says "Hey `knox`, please charge card `/cards/123` $10." 
 
-We also have a second layer of routing. `midlr` actually listens on both `https://api.balancedpayments.com` as well as `https://js.balancedpayments.com`. It proxies the requests for both: it sends API requests to the router and sends JavaScript requests to `js`. `midlr` proxies `https://js.balancedpayments.com` mostly for historical reasons: eventually it will just be an S3 bucket with the simple file.
+We also have a second layer of routing. `midlr` actually listens on both `https://api.goeverpay.com` as well as `https://js.goeverpay.com`. It proxies the requests for both: it sends API requests to the router and sends JavaScript requests to `js`. `midlr` proxies `https://js.goeverpay.com` mostly for historical reasons: eventually it will just be an S3 bucket with the simple file.
 
-We use `midlr` to filter out _all_ sensitive data. It ensures that no card information goes to the wrong place. By having one main place to put all of the filtering and routing, we can ensure that the right data goes to the right place. This diagram got a teeny bit complicated, but since `balanced.js` hits `https://api.balancedpayments.com`, it also goes through `midlr`, which routes it to `knox`. However, for simplicity, I decided to draw the arrow straight from `balanced.js` to `knox` here.
+We use `midlr` to filter out _all_ sensitive data. It ensures that no card information goes to the wrong place. By having one main place to put all of the filtering and routing, we can ensure that the right data goes to the right place. This diagram got a teeny bit complicated, but since `everpayjs` hits `https://api.goeverpay.com`, it also goes through `midlr`, which routes it to `knox`. However, for simplicity, I decided to draw the arrow straight from `everpay.js` to `knox` here.
 
 ## Further isolation
 
 Here's the last diagram. Red shows the network boundaries.
 
-![Balanced Architecture 4](/img/blogimages/balanced_arch_4.jpg)
+![Everpay Architecture 4](/img/blogimages/balanced_arch_4.jpg)
 
-`knox`, `midlr`, and `js` are all on their own Amazon account. Only a subset of our staff has access to this: I personally wouldn't even know how to get into those servers. `precog`, `api`, and `router` are all on an Amazon account which most of our developers have access to, and that's where most of the actual work in building new features goes. Finally, your application is obviously not a part of Balanced, so I circled it separately too.
+`knox`, `midlr`, and `js` are all on their own Amazon account. Only a subset of our staff has access to this: I personally wouldn't even know how to get into those servers. `precog`, `api`, and `router` are all on an Amazon account which most of our developers have access to, and that's where most of the actual work in building new features goes. Finally, your application is obviously not a part of Everpay, so I circled it separately too.
 
 ## Conclusion
 
