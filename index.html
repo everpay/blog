@@ -37,7 +37,7 @@ layout: default
             <div class="featured-post__info">
               <time datetime="2017-05-02" class="featured-post__date" title="{{ page.date | date: "%b %-d, %Y" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
               <h1 class="featured-post__title"><span class="featured-post__title-text">  {{ post.title }}</span></h1>
-                  <span class="featured-post__button"><a href="{{ post.url }}">Read &gt;&gt;</a></span>
+                  <a href="{{ post.url }}" class="featured-post__button">Read &gt;&gt;</a>
             </div>
           </a>
         </section>
