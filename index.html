@@ -31,7 +31,7 @@ layout: default
   <div class="row">
     <div class="col-lg-12">
         <section class="featured-post">
-          <a href="/blog/why-payments-are-more-than-plumbing/">
+          <a href="{{ post.url }}">
             <div class="featured-post__image" style="background-image: url({% if post.cover_image %}{{ post.cover_image }}{% else %}{{site.generic_cover_image}}{% endif %};"></div>
          <h3 class="featured-post__heading e-uppercase e-600 e-small-1">Featured</h3>
             <div class="featured-post__info">
@@ -53,7 +53,7 @@ layout: default
  <div class="row">
 {% for post in site.posts %}
   <div class="col-lg-4 col-md-6 col-sm-12">
-    <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article">
+    <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
       <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
         <div class="post-list__image-container">
           <div class="post-list__image" style="background-image: url({% if post.image %}{{ post.image }}{% else %}{{site.generic_image}}{% endif %});"></div>
@@ -67,22 +67,18 @@ layout: default
     <span class="timestyle-month">{{ post.date | date: "%b" }}</span>
   </time>
 </small>
-              </div>
+</div>
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
-          <div class="post-list__excerpt e-small-1">Serving your customers is about more than just offering great products and being responsive -- it's also about protectin…</div>
+          <div class="post-list__excerpt e-small-1">{{ post.meta }}</div>
         </article>
       </a>
       <div class="post-list__tag e-uppercase e-small e-600 tag-red">
-        
-        
-        <a href="/blog/tag/the-payments-space_">the payments space_</a>
-        
-      </div>
+      <a href="/tag/payments-space/">the payments space_</a>
+       </div>
     </article>
   </div>
        {% endfor %}
     </div>
-  
   
   
 <div class="divider--dotted"></div>
