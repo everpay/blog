@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="blog-title-section">
+        <div class="blog-title-container">
+          <h1 class="blog-title">&gt;Pay_Bytes</h1>
+          <p class="blog-description">: a collection of facts, tidbits, and musings about our world and our industry</p>
+        </div>
+        <div class="blog-search-container">
+          <div class="search search--active">
+            <div class="search__input">
+              <img class="search__icon" src="/blog/assets/images/search-icon.svg?v=6f78df2cbc">
+              <div class="ais-search-box"><input type="text" placeholder="Search keyword, title, etc..." id="search-input" autocapitalize="off" autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" value="" class="ais-search-box--input"></div>
+              <div class="search__dropdown" id="hits-container"></div>
+              <span class="search__close">×</span>
+            </div>
+          </div>  
+        </div>
+      </section>
+    </div>
+  </div>
+  
+ <div class="row">
+{% for post in site.posts %}
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article">
+      <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
+        <div class="post-list__image-container">
+          <div class="post-list__image" style="background-image: url(/blog/content/images/2017/05/blog-dss.jpg);"></div>
+          <div class="post-list__link e-small e-600 e-uppercase"><span class="post-list__reading-time">
+            <span class="js-post-list__reading-time">3 minute</span> read</span></div>
+        </div>
+        <article class="post-list__article tag-red">
+          <div class="post-list__date e-small">posted on <time datetime="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time></div>
+          <h3 class="post-list__title e-600">{{ post.title }}</h3>
+          <div class="post-list__excerpt e-small-1">Serving your customers is about more than just offering great products and being responsive -- it's also about protectin…</div>
+        </article>
+      </a>
+      <div class="post-list__tag e-uppercase e-small e-600 tag-red">
+        
+        
+        <a href="/blog/tag/the-payments-space_">the payments space_</a>
+        
+      </div>
+    </article>
+  </div>
+       {% endfor %}
+    </div>
+  
+  
+  
+<div class="divider--dotted"></div>
+  
+  <div class="grid-container margin-y--medium">
+  <div class="grid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="text-center e-600">
+          Stay up to date – subscribe to our <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="link__basic--dotted--dark">RSS feed</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+</div>

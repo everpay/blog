@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+    <!-- Hero Section
+    ================================================== -->
+    <section id="blog-intro" class="tp--inner-header tp--section tp--section-dark tp--pattern-4 tp--height-100 text-center">
+    <div class="sub-header">
+        <div class="container">
+  <a href="/"><h1 class="blog-title blog-title--small">&gt;Elektro_byte</h1></a>
+  <span class="blog-description--small e-small-1">: a collection of facts, tidbits, and musings <span class="blog-description--small-addition">about our world and our industry by the wonderful people of Everpay</span></span>
+</div>
+        </div>
+        <div class="item tp--intro-content-left text-sm-center p-top-md-110 p-bottom-md-100">
+          <div class="container">
+
+            <div class="row tp--col-sm-vertical-align tp--col-xs-vertical-align tp--vertical-align-intro text-sm-center p-top-md-140">
+
+              <div class="col-sm-12 col-md-12 text-sm-center p-top-md-100">
+                <div class="text-sm-center">
+                  <h1 class="post__title">{{ page.title }}</h1>
+                  <p></p>
+                    <p></p>
+                    <div class="post__date e-uppercase e-small-1">
+                <time datetime="{{ page.date | date: "%b %-d, %Y" }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+                    </div>
+                      <hr style="width:45%">
+                    <div class="divider--squiggle margin-centered"></div>
+                    
+                    <div class="post__author">
+                <a href="#"><div class="author-image--small inline" style="background-image: url('./images/2015/12/502a4f0c0aa8a0a9545ba512cc288a3e_400x400.jpeg')"></div></a> 
+                        Authored by <span class="post__author-name"><a href="#" class="link__basic--dotted--white">{% if page.author %} • {{ page.author }}{% endif %}</a></span>
+              </div>
+                    <p class="text-center post-meta">{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+                   
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+    </section>
+
+
+<section id="intro" class="tp--intro tp--intro-dark tp--slider-single tp--owl-carousel-single owl-carousel owl-theme tp--intro-height-100 owl-loaded" data-carousel-options="{ &quot;items&quot;: &quot;1&quot;, &quot;mouseDrag&quot;: false, &quot;touchDrag&quot;: false, &quot;responsive&quot;: { &quot;0&quot;: { &quot;items&quot;:&quot;1&quot; } } }">
+      <div class="item tp--intro-content-left text-sm-center tp--with-image">
+<div class="header-overlay header-overlay50 text-white container">
+<div class="row-fluid">
+<div class="header-txt header-txt-center row tp--col-sm-vertical-align tp--col-xs-vertical-align p-top-md-110 p-bottom-md-40 tp--vertical-align-intro">
+
+              <div class="col-lg-9 col-md-9 col-sm-10 p-top-md-110 p-bottom-md-20">
+                <div class="p-top-md-110">
+                  <h1 class="text-center post-title">{{ page.title }}</h1>
+                 <p class="text-center post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+              
+                   <a class="btn btn-lg btn-white btn-box-shadow tp--scroll" href="#featured1">Learn more</a>
+                  </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+ </div>
+ </section>
+
+<div class="row-fluid">
+<section id="featured1" class="tp--section tp--featured tp--section-dark tp--gradient-20 tp--padding-lg hidden">
+      <div class="container">
+        <div class="row tp--col-sm-vertical-align">
+          <div class="col-md-12 text-center text-md-left post-header p-top-sm-60">
+    <h1 class="text-center post-title">{{ page.title }}</h1>
+            <p class="text-center post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+   </div>
+          </div>
+        </div>
+</section>
+
+<section id="blog" class="tp--section p-top-sm-80 p-bottom-sm-50">
+    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-duration="750">
+        <div class="row clearfix">
+          <div class="col-md-8 col-md-offset-2 text-left text-md-left">
+    {{ content }}
+           </div>
+          </div>
+        </div>
+  </section>
+
+</div>
