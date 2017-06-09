@@ -34,9 +34,9 @@ layout: default
           <a href="/blog/why-payments-are-more-than-plumbing/">
             <div class="featured-post__image" style="background-image: url(https://www.braintreepayments.com//blog/content/images/2017/04/b-pipes.jpg);"></div>
             <!--<img src="/blog/content/images/2017/04/b-pipes.jpg" class="featured-post__image">-->
-            <h3 class="featured-post__heading t-uppercase t-600 t-small-1">Featured</h3>
+            <h3 class="featured-post__heading e-uppercase e-600 e-small-1">Featured</h3>
             <div class="featured-post__info">
-              <time datetime="2017-05-02" class="featured-post__date">May 02. 2017_</time>
+              <time datetime="2017-05-02" class="featured-post__date" title="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}_</time>
               <h1 class="featured-post__title"><span class="featured-post__title-text">Why Payments Are More Than Plumbing</span></h1>
               <span class="featured-post__button">Read &gt;&gt;</span>
             </div>
