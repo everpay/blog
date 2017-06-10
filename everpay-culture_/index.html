@@ -37,7 +37,16 @@ description: Who we are, and what makes us boogey.
   <div class="row-fluid">    
    
  <div class="row">
-
+<ul class="blog-tags-list">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+    {% assign t = tag | first %}
+    {% assign posts = tag | last %}
+    <li class="blog-tag-item" id="{{ t }}-item">
+      <a href onclick="filter('{{ t }}'); return false;">{{ t }}</a>
+    </li>
+  {% endfor %}
+</ul>
   <div class="col-lg-4 col-md-6 col-sm-12">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
  <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
