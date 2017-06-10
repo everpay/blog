@@ -65,7 +65,7 @@ layout: default
             <span class="js-post-list__reading-time">3 minute</span> read</span></div>
         </div>
         <article class="post-list__article tag-red">
-          <div class="post-list__date e-small">posted on <small class="timestyle">
+       <div class="post-list__date e-small">posted on <small class="timestyle">
   <time datetime="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
 </small>
 </div>
@@ -73,16 +73,15 @@ layout: default
           <div class="post-list__excerpt e-small-1">{{ post.content | strip_html | truncatewords:45}}</div>
         </article>
             
-           </a>  {% endfor %}
+           </a>  
       <div class="post-list__tag e-uppercase e-small e-600 tag-red">
      {% for tag in site.tags %}
    <a href="/tag/{{ post.tag }}">{{ post.tag }}</a> 
     {% endfor %}
        </div>
     </article>
-  </div>
-       
-       
+        {% endfor %}
+  </div>       
     </div>
   
   
