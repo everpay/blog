@@ -37,30 +37,22 @@ description: Who we are, and what makes us boogey.
   <div class="row-fluid">    
    
  <div class="row">
-{% for tag in site.tags %}
-        {% assign t = tag | first %}
-        {% assign posts = tag | last %}
-        <div class="blog-list-container hidden" id="{{ t }}-container">
-          <ul class="blog-list">
-            {% for post in posts %}
-              {% if post.tags contains t %}
-                <li>
-                  <span class="blog-item-date">{{ post.date | date: "%d %b %Y" }}</span>
-                  <a href="{{ post.url }}">{{ post.title }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-
-          {% assign numPosts = posts | size %}
-          {% if numPosts == 3 %}
-            <p>{{ posts | size }} post containing tag <b>{{ everpay }}</b></p>
-          {% else %}
-            <p>{{ posts | size }} posts containing tag <b>{{ everpay }}</b></p>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
+<ul class="posts">
+{% assign count = 0 %}
+{% for post in site.posts %}
+  {% if post.tags contains 'question' %}
+    {% if count < 20 %}
+      {% assign count = count|plus:1 %}
+      <div class="row-fluid">
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <span>({{ post.date | date:"%Y-%m-%d" }})</span>
+        </li>
+      </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>
 	  <script>
 		  if(window.location.hash) {
   var tag = window.location.hash.split('#')[1];
