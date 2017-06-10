@@ -70,10 +70,10 @@ layout: default
 </small>
 </div>
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
-          <div class="post-list__excerpt e-small-1"> {{ post.content | strip_html | truncatewords:75}}</div>
+          <div class="post-list__excerpt e-small-1">  {{ post.content | strip_html | truncatewords:75}}</div>
         </article>
             
-           </a>
+           </a>  {% endfor %}
       <div class="post-list__tag e-uppercase e-small e-600 tag-red">
      {% for tag in site.tags %}
    <a href="/tag/{{ post.tag }}">{{ post.tag }}</a> 
@@ -82,7 +82,7 @@ layout: default
     </article>
   </div>
        
-         {% endfor %}
+       
     </div>
   
   
