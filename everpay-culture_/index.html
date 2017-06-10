@@ -37,21 +37,12 @@ description: Who we are, and what makes us boogey.
   <div class="row-fluid">    
    
  <div class="row">
-{% for category in site.categories %}
-    {% assign counter=0 %}
-    {% for posts in category %}
-        {% for post in posts %}
-            {% if post.tags contains page.tag %}
-                {% assign counter=counter | plus:1 %}
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
+{% for tag in tags %}
+	<h2 id="{{ tag | slugify }}">{{ tag }}</h2>
 
-{% if counter != 0 %}
-{% for posts in category %}
-{% for post in posts %}
-{% if post.tags contains page.tag %}
-  <div class="col-lg-4 col-md-6 col-sm-12 {% assign counter=counter | plus:1 %}" id="{{ page.id }}">
+	 {% for post in site.posts %}
+		 {% if post.tags contains tag %}
+  <div class="col-lg-4 col-md-6 col-sm-12">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
  <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
         <div class="post-list__image-container">
@@ -62,21 +53,22 @@ description: Who we are, and what makes us boogey.
         <article class="post-list__article tag-red">
 		<a itemprop="url" href="{{ post.url }}" target="_blank" title="{{ post.title }}">
               <div class="post-list__date e-small">posted on <small class="timestyle">
-  <time datetime="{{ page.date | '%Y-%m-%dT%H:%i:%S-08:00' }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+  <time datetime="{{ post.date | '%Y-%m-%dT%H:%i:%S-08:00' }}">{{ post.date | date_to_string }}</time>
 </small></div>
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
           <div class="post-list__excerpt e-small-1 p-bottom-md-40">{{ post.excerpt }}..</div>
+			 {% for tag in post.tags %}
+			 <a class="tag" href="/tag/#{{ tag | slugify }}">{{ tag }}</a>
+		         {% endfor %}
 			  </a>
         </article>
             
            </a>  
     </article>
          </div>    
-{% endif %}
-{% endfor %}
-{% endfor %}
-	 
-{% endif %}
+	 {% endif %}
+	 {% endfor %}
+	
 {% endfor %}
 
     </div>
