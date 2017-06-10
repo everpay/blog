@@ -1,8 +1,11 @@
 ---
 layout: post
 title:  "Why Payments Are More Than Plumbing"
-date:   2017-04-26 10:22:04
-author: Ricardo Vasquez
+date:   2017-06-09 11:11:04
+author: Matin Tamizi
+author_image: /img/authors/matin_tamizi.png
+image: /img/blogimages/2014-01-09.jpg
+cover_image: /img/blogimages/2014-01-09-cover.jpg
 categories: everpay update
 tags: 
 - payments_space
