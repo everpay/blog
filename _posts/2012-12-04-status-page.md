@@ -1,8 +1,12 @@
 ---
 layout: post
-title:  "Why Stashboard and Pingdom Weren't Enough: The Evolution of a Status Page"
+title:  "Why Stashboard and Pingdom Aren't Enough"
 date:   2017-04-26 10:22:04
-author: Marshall Ricky
+author: Jareau Wade
+author_bio: is a co-founder and head of growth at Everpay. Before that, he was the 1st employee and head of data acquisition at Milo.com where he Managed 60% of Milo's employees and designed many of their data acquisition systems. Jareau holds a BSE in Electrical Engineering from University of Pennsylvania where he built emergency personnel tracking systems using GPS.
+author_image: /img/authors/jareau_wade.png
+image: /img/blogimages/2013-05-13.jpg
+cover_image: /img/blogimages/2013-05-13-cover.jpg
 categories: everpay update
 tags: 
 - payments_space
