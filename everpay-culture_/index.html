@@ -34,7 +34,7 @@ description: Who we are, and what makes us boogey.
     </div>
   </div>
   
-  <div class="container">    
+  <div class="row-fluid">    
    
  <div class="row">
 {% for post in site.posts | group_by_exp:"tags","tag.everpay | truncate: 6, \"\""  %}
