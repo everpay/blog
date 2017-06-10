@@ -1,0 +1,65 @@
+---
+layout: default
+title: Office Life style
+description: Who we are, and what makes us boogey.
+---
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+      <h3 class="post-list__heading margin-top--medium margin-bottom--small e-small-1 e-uppercase e-600">The Latest</h3>
+    </div>
+  </div>
+  
+ <div class="row">
+{% for post in site.posts | group_by:"tags"  %}
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
+      <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
+        <div class="post-list__image-container">
+          <div class="post-list__image" style="background-image: url({% if post.image %}{{ post.image }}{% else %}{{site.generic_image}}{% endif %});"></div>
+          <div class="post-list__link e-small e-600 e-uppercase"><span class="post-list__reading-time">
+            <span class="js-post-list__reading-time">3 minute</span> read</span></div>
+        </div>
+        <article class="post-list__article tag-red">
+       <div class="post-list__date e-small">posted on <small class="timestyle">
+  <time datetime="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+</small>
+</div>
+          <h3 class="post-list__title e-600">{{ post.title }}</h3>
+          <div class="post-list__excerpt e-small-1 p-bottom-md-40">{{ post.content | strip_html | truncatewords:35}}</div>
+        </article>
+            
+           </a>  
+      <div class="post-list__tag e-uppercase e-small e-600 tag-red">
+     {% for tag in site.tags %}
+   <a href="/tag/{{ post.tag }}">{{ post.tag }}</a> 
+    {% endfor %}
+       </div>
+    </article>
+         </div>        
+       {% endfor %}
+    </div>
+  
+  
+<div class="divider--dotted"></div>
+
+<article>
+    <ul class="posts-list hfeed">
+    {% for post in paginator.posts %}
+    {% include post-list-item.html %}
+    {% endfor %}
+    </ul>
+</article>
+
+{% if site.tags.size > 0 %}
+<aside>
+    <h3>Posts' tags list</h3>
+    <ul class="tags-list">
+    {% for tag in site.tags %}
+    <li><a href="/tag{{ tag[0] }}">{{ tag[0] }}</a></li>
+    {% endfor %}
+    </ul>
+</aside>
+{% endif %}
