@@ -37,8 +37,21 @@ description: Who we are, and what makes us boogey.
   <div class="row-fluid">    
    
  <div class="row">
-{{ post.tags | group_by:"payments_space" | truncate: 9, \"\"" }}
-  <div class="col-lg-4 col-md-6 col-sm-12">
+{% for category in site.categories %}
+    {% assign counter=0 %}
+    {% for posts in category %}
+        {% for post in posts %}
+            {% if post.tags contains page.tag %}
+                {% assign counter=counter | plus:1 %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+{% if counter != 0 %}
+{% for posts in category %}
+{% for post in posts %}
+{% if post.tags contains page.tag %}
+  <div class="col-lg-4 col-md-6 col-sm-12 {% assign counter=counter | plus:1 %}" id="{{ page.id }}">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
  <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
         <div class="post-list__image-container">
@@ -47,18 +60,23 @@ description: Who we are, and what makes us boogey.
             <span class="js-post-list__reading-time">3 minute</span> read</span></div>
         </div>
         <article class="post-list__article tag-red">
-       <div class="post-list__date e-small">posted on <small class="timestyle">
-  <time datetime="{{ post.date | date: "%b %-d, %Y" }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-</small>
-</div>
+		<a itemprop="url" href="{{ post.url }}" target="_blank" title="{{ post.title }}">
+              <div class="post-list__date e-small">posted on <small class="timestyle">
+  <time datetime="{{ page.date | '%Y-%m-%dT%H:%i:%S-08:00' }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+</small></div>
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
-          <div class="post-list__excerpt e-small-1 p-bottom-md-40">{{ post.content | strip_html | truncatewords:35}}</div>
+          <div class="post-list__excerpt e-small-1 p-bottom-md-40">{{ post.excerpt }}..</div>
+			  </a>
         </article>
             
            </a>  
     </article>
          </div>    
-
+{% endif %}
+{% endfor %}
+{% endfor %}
+	 
+{% endif %}
 {% endfor %}
 
     </div>
