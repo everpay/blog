@@ -37,7 +37,14 @@ description: Who we are, and what makes us boogey.
   <div class="row-fluid">    
    
  <div class="row">
-{% for post in site.posts | group_by_exp:"tags","tag.everpay | truncate: 6, \"\""  %}
+{% for tag in site.tags %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+
+{{ everpay-culture | downcase }}
+
+{% for post in posts %}
+  {% if post.tags contains everpay-culture %}
   <div class="col-lg-4 col-md-6 col-sm-12">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
  <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
@@ -57,8 +64,10 @@ description: Who we are, and what makes us boogey.
             
            </a>  
     </article>
-         </div>        
-       {% endfor %}
+         </div>    
+	 {% endif %}
+{% endfor %}
+{% endfor %}
     </div>
     </div>
   
