@@ -115,7 +115,7 @@ function showContainer(tag) {
   <time datetime="{{ post.date | '%Y-%m-%dT%H:%i:%S-08:00' }}">{{ post.date | date_to_string }}</time>
 </small></div>
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
-          <div class="post-list__excerpt e-small-1 p-bottom-md-40">{{ post.excerpt }}..</div>
+          <div class="post-list__excerpt e-small-1 p-bottom-md-40">{{ post.content | strip_html | truncatewords:36}}</div>
 	</a>
         </article>
             
@@ -130,5 +130,4 @@ function showContainer(tag) {
       </div>
       </div>
        
-    </div>
 </section>
