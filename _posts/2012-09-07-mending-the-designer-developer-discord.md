@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Damon Chin
-title: Mending the designer-developer discord
+title: Fix the designer-developer discord
 date:  2012-09-07 06:22:04
 categories: everpay update
 tags: 
