@@ -32,7 +32,11 @@ layout: default
   
   <div class="row">
     <div class="col-lg-12">
-          {% for post in site.posts limit:1 %}
+   // Emulates `limit:1`
+    {% for post in site.posts %}
+        {% if post.featured == true %}
+          {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+          {% if count == '1' %}
         <section class="featured-post">
           <a href="{{ post.url }}">
             <div class="featured-post__image" style="background-image: url({% if post.cover_image %}{{ post.cover_image }}{% else %}{{site.generic_cover_image}}{% endif %};"></div>
@@ -44,7 +48,9 @@ layout: default
             </div>
           </a>
         </section>
-              {% endfor %}
+           {% endif %}
+      {% endif %}
+    {% endfor %}
     </div>
   </div>
   
