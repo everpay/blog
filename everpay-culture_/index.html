@@ -38,10 +38,10 @@ description: Who we are, and what makes us boogey.
    
  <div class="row">
 {% for tag in tags %}
-	<h2 id="{{ tag | slugify }}">{{ tag }}</h2>
+	<h2 id="{{ tag | slugify }}">{{ payments_space }}</h2>
 
 	 {% for post in site.posts %}
-		 {% if post.tags contains tag %}
+		 {% if post.tags contains payments_space %}
   <div class="col-lg-4 col-md-6 col-sm-12">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
  <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
