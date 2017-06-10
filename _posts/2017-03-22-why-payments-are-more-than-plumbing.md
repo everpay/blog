@@ -6,11 +6,9 @@ author: Ricardo Vasquez
 categories: everpay update
 tags: 
 - payments_space
-- everpay
-- payments
 ---
-<pre><h6>A <a href="http://www.itproportal.com/features/why-payments-are-more-than-plumbing/">version of this article</a> was first published on UK publication, <em>IT Pro Portal</em>, on April 10th, 2017. It is republished here with permission from <em>IT Pro Portal</em>.</h6></pre>
-
+<h6><pre>A <a href="http://www.itproportal.com/features/why-payments-are-more-than-plumbing/">version of this article</a> was first published on UK publication, <em>IT Pro Portal</em>, on April 10th, 2017. It is republished here with permission from <em>IT Pro Portal</em>.</pre></h6>
+<!--break-->
 Transactions are the foundation of business, but too often in our line of work we see payments treated as an afterthought.
 <br>
 As a consumer, we’ve all gone through an online checkout, only to find they don’t take our card or our preferred mobile wallet; spotted a product online and struggled to find a place we can buy it; had to leave an app, or, worse still, download one to buy something; or landed on a confusing checkout page that looks completely different to the rest of the website.
