@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "Welcome to the new Everpay!"
-date:   2015-08-26 09:55:04
+featured: true
+date:   2017-06-07 09:55:04
 author_image: /img/authors/kyungmin_kim.png
 author_bio: (aka KK) joined Everpay as a front-end engineer in January 2014 after attending App Academy. She launched her career at Google as a UX designer. 
 image: /img/blogimages/2014-01-30.jpg
