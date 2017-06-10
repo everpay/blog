@@ -8,15 +8,11 @@ author: Andrew Nossiter
 author_image: /img/authors/andrew_nossiter.png
 categories: everpay update
 tags: 
-- payments_space
-- everpay
-- dashboard
-- dispute-portal
 - payments
 ---
 
 Handling credit card disputes can be a messy affair, but at Everpay we are making this process as painless as possible for our customers. Starting today, you’ll be able to fight chargebacks directly via the dashboard without having to contact support thanks to our new dispute portal!
-
+<!--break-->
 ![Dispute portal](/img/blogimages/dispute-details-page.png)
 
 We kept layout changes to a minimum for you, and to that effect the process has been kept as simple as possible.  Once you’ve logged in to the Everpay dashboard simply click on the Disputes tab as you normally would, and then select the individual dispute that you’d like to protest. You’ll then see a blue button labelled “Attach docs”, which will let you leave a detailed description of why you’re fighting the dispute, as well as the ability to attach any supporting documentation that you have.
