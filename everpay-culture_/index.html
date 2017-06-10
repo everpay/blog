@@ -37,14 +37,7 @@ description: Who we are, and what makes us boogey.
   <div class="row-fluid">    
    
  <div class="row">
-{% for tag in site.tags %}
-  {% assign t = tag | first %}
-  {% assign posts = tag | last %}
-
-{{ t | downcase }}
-
-{% for post in posts %}
-  {% if post.tags t %}
+{{ post.tags | group_by:"payments_space" | truncate: 9, \"\"" }}
   <div class="col-lg-4 col-md-6 col-sm-12">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
  <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
