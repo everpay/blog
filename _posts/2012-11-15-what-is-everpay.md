@@ -3,6 +3,8 @@ layout: post
 title:  "What is Everpay?"
 date:   2012-11-22 19:55:04
 author: Ricardo Vasquez
+image: /img/blogimages/2013-03-13.jpg
+cover_image: /img/blogimages/2013-03-13-cover.jpg
 categories: everpay update
 tags: 
 - everpay
