@@ -4,7 +4,6 @@ title: Office Life style
 description: Who we are, and what makes us boogey.
 ---
 
-
 <section class="tp--section">
 <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-duration="750">
 <div class="row">
@@ -23,6 +22,7 @@ description: Who we are, and what makes us boogey.
             <p class="blog-description"></p>
         </div>
         <div class="blog-search-container">  
+            <p class="blog-description"></p>
         </div>
       </section>
     </div>
@@ -34,7 +34,7 @@ description: Who we are, and what makes us boogey.
       <h3 class="post-list__heading margin-top--medium margin-bottom--small e-small-1 e-uppercase e-600">The Latest</h3>
     </div>
   </div>
-  
+<div class="container">  
  <div class="row">
 {% for post in site.posts | group_by_exp:"tags","tag.payments_space | truncate: 6, \"\"" }}
   <div class="col-lg-4 col-md-6 col-sm-12">
@@ -57,7 +57,7 @@ description: Who we are, and what makes us boogey.
            </a>  
       <div class="post-list__tag e-uppercase e-small e-600 tag-red">
      {% for tag in site.tags %}
-   <a href="/tag/{{ post.tag }}">{{ post.tag }}</a> 
+   <a href="{{ post.tag }}">{{ post.tag }}</a> 
     {% endfor %}
        </div>
     </article>
@@ -70,24 +70,6 @@ description: Who we are, and what makes us boogey.
       </div>
       </div>
       </div>
+    
     </div>
 </section>
-
-<article class="hidden">
-    <ul class="posts-list hfeed">
-    {% for post in paginator.posts %}
-    {% include post-list-item.html %}
-    {% endfor %}
-    </ul>
-</article>
-
-{% if site.tags.size > 0 %}
-<aside>
-    <h3>Posts' tags list</h3>
-    <ul class="tags-list">
-    {% for tag in site.tags %}
-    <li><a href="/tag{{ tag[0] }}">{{ tag[0] }}</a></li>
-    {% endfor %}
-    </ul>
-</aside>
-{% endif %}
