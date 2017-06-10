@@ -23,7 +23,7 @@ over to a third-party developer. The developer implements the design, but not
 without some “creative” maneuvering to fill design gaps and override
 functionality decisions lost in translation. The back and forward feedback
 loop breaks down, and we end up with a shitty product.
-
+<!--break-->
 Such is the case with many agencies utilizing third-party vendors and even in-
 house departments treating design and development as separate entities. Coming
 from an agency background, I’ve seen firsthand the designer-developer
