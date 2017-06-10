@@ -55,7 +55,7 @@ layout: default
   </div>
   
  <div class="row">
-{% for post in site.posts %}
+{% for post in site.posts limit:12 %}
   <div class="col-lg-4 col-md-6 col-sm-12">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
       <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
@@ -70,7 +70,10 @@ layout: default
 </small>
 </div>
           <h3 class="post-list__title e-600">{{ post.title }}</h3>
-          <div class="post-list__excerpt e-small-1">{{ post.content | strip_html | truncatewords: 140 }}</div>
+          <div class="post-list__excerpt e-small-1">{{ post.content | split:'<!--break-->' | first }}
+   {% if post.content contains '<!--break-->' %}
+      <a href="{{ post.url }}">read more</a>
+   {% endif %}</div>
         </article>
             
            </a>
