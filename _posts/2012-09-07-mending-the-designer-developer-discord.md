@@ -1,21 +1,15 @@
 ---
 layout: post
-author: Damon Chin
+author: Steve Klabnik
+author_image: /img/authors/steve_klabnik.png
 title: Fix the designer-developer discord
 date:  2012-09-07 06:22:04
+image: /img/blogimages/2013-12-13.jpg
+cover_image: /img/blogimages/2013-12-13-cover.jpg
 categories: everpay update
 tags: 
 - payments_space
 - everpay
-- collaboration
-- design
-- developer
-- payments
-- product
-- relationship
-- website
-- workflow
-- designer
 ---
 
 A design is completed—photoshop templates, specs, images, and all—and handed
