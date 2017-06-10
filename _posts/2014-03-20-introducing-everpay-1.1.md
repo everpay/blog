@@ -19,7 +19,7 @@ tags:
 # "Orders" Help Marketplaces Keep Track of Their Money
 
 Since launching revision 1.0 of the Everpay API in 2015 we have been working closely with customers to help them efficently manage and pay out funds. A recurring pain point for our customers was having to keep track of which funds were allocated to which merchant. When one of our customers made a mistake they would end up paying out funds to one merchant using funds allocated for another. This was frustrating in the best case and expensive in the worst.
-
+<!--break-->
 Everpay's release of [revision 1.1](https://docs.everpayinc.com/1.1/overview/resources/#changelog) of the API resolves this by creating a new construct called [Orders](https://docs.everpayinc.com/1.1/api/orders/). An Order behaves like an escrow in that you can hold funds within it and then release the funds when ready. However, an Order is created per merchant so that there is no co-mingling of funds. If you debit $100 from a buyer's card into an Order that $100 is only payable to the merchant associated with that Order. If you refund the buyer $50 then you can only pay out the remaining funds in the Order so it's no longer possible to dip into funds allocated for one merchant to another.
 
 Let's break this down into a real-world use-case to help better illustrate how Orders are useful, let's say you're a [crowdfunding site](https://crowdhoster.com). 
