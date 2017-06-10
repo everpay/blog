@@ -4,7 +4,30 @@ title: Office Life style
 description: Who we are, and what makes us boogey.
 ---
 
-<section class="container">
+
+<section class="tp--section">
+<div class="container aos-init aos-animate" data-aos="fade-up" data-aos-duration="750">
+<div class="row">
+<div class="grid">
+    
+<div class="sub-header">
+  <a href="/blog"><h1 class="blog-title blog-title--small t-600">&gt;Pay_Bytes</h1></a>
+  <span class="blog-description--small t-small-1">: a collection of facts, tidbits, and musings <span class="blog-description--small-addition">about our world and our industry by the people of Braintree</span></span>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+      <section class="blog-title-section">
+        <div class="blog-title-container">
+          <h1 class="blog-title">Everpay Culture_</h1>
+            <p class="blog-description"></p>
+        </div>
+        <div class="blog-search-container">  
+        </div>
+      </section>
+    </div>
+  </div>
+  
     
 <div class="row">
     <div class="col-lg-12">
@@ -13,7 +36,7 @@ description: Who we are, and what makes us boogey.
   </div>
   
  <div class="row">
-{% for post in site.posts | group_by_exp:"tags","tag.payments_space | truncate: 9, \"\"" }}
+{% for post in site.posts | group_by_exp:"tags","tag.payments_space | truncate: 6, \"\"" }}
   <div class="col-lg-4 col-md-6 col-sm-12">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
       <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
@@ -44,9 +67,13 @@ description: Who we are, and what makes us boogey.
   
   
 <div class="divider--dotted"></div>
+      </div>
+      </div>
+      </div>
+    </div>
 </section>
 
-<article>
+<article class="hidden">
     <ul class="posts-list hfeed">
     {% for post in paginator.posts %}
     {% include post-list-item.html %}
