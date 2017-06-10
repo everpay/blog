@@ -19,7 +19,7 @@ tags:
 ## Suspending Traffic for Zero-Downtime Migrations
 
 Some time ago, we had to perform a fairly intensive database migration. Since we process payments for a number of marketplaces who don't want any downtime at all, scheduling a maintenance window to perform the migration wasn't an option.  We had to do everything without taking our app offline for even a short period of time.
-
+<!--break-->
 ### tl;dr
 We used HAProxy to suspend traffic for a short period of time, while we switched out DBs.
 
