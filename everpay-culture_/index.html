@@ -5,7 +5,7 @@ description: Who we are, and what makes us boogey.
 ---
 
 <section id="blog-intro" class="tp--section-dark text-center">
-	    <div class="header-overlay header-overlay50 text-white margin-top--large">
+	    <div class="header-overlay header-overlay50 text-white p-top-md-80">
     <div class="sub-header">
  <div class="container">
   <a href="/"><h1 class="blog-title blog-title--small">&gt;Elektro_byte</h1></a>
@@ -35,15 +35,9 @@ description: Who we are, and what makes us boogey.
   </div>
   
   <div class="container">    
-      
-<div class="row">
-    <div class="col-lg-12">
-      <h3 class="post-list__heading margin-top--medium margin-bottom--small e-small-1 e-uppercase e-600">The Latest</h3>
-    </div>
-  </div>
-    
+   
  <div class="row">
-{% for post in site.posts | group_by_exp:"tags","tag.payments_space | truncate: 6, \"\""  %}
+{% for post in site.posts | group_by_exp:"tags","tags.payments_space | truncate: 6, \"\""  %}
   <div class="col-lg-4 col-md-6 col-sm-12">
     <article class="post margin-bottom--medium" data-file="{{ post.url | prepend: site.baseurl }}" data-target="article" itemscope itemtype="http://schema.org/BlogPosting">
  <a href="{{ post.url | prepend: site.baseurl }}" class="post-list__container">
