@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://antique-dealer-duck-72574.netlify.com/* https://blog.everpayinc.com/:splat 301!
